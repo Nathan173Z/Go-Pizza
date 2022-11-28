@@ -2,25 +2,21 @@ import React from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
-
-import {
-  useFonts,
-  Poppins_400Regular,
-  Poppins_500Medium,
-  Poppins_700Bold
-} from '@expo-google-fonts/poppins';
+import { useFonts, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
+import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { AppRoutes } from './src/routes/app.routes';
+import { Login } from './src/screens/Login';
+import { OrderProgress } from './src/screens/OrderProgress';
 
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    Poppins_400Regular,
-    Poppins_500Medium,
-    Poppins_700Bold
+    DMSans_400Regular,
+    DMSerifDisplay_400Regular
   })
   if(!fontsLoaded) return null;
   
@@ -28,8 +24,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <AppRoutes />
+        <NavigationContainer>
+        <AppRoutes/>
       </NavigationContainer>
     </ThemeProvider>    
   );
