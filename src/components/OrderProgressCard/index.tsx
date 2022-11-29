@@ -10,13 +10,11 @@ import {
   StatusContainer,
   StatusLabel,
   StatusTypesProps,
-  Flex,
 } from './styles';
 
 interface Props{
-  id: string;
+  image: string;
   pizza: string;
-
   status: StatusTypesProps;
   table_number: string;
   quantity: string;
@@ -24,7 +22,7 @@ interface Props{
 
 
 export function OrderPorgressCard({
-  id,
+  image,
   pizza,
   status,
   table_number,
@@ -32,12 +30,12 @@ export function OrderPorgressCard({
 }: Props) {
   return (
     <Container>
-      <Image source={queijo} />
+      <Image source={image} />
 
       <Name>{pizza}</Name>
 
       <Description>
-        Mesa: {table_number} - Qnt: {quantity}
+        Mesa: {table_number} • Qnt: {quantity}
       </Description>
 
     

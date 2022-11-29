@@ -1,7 +1,10 @@
 import React from 'react';
-import { FlatList } from 'react-native';
 import { OrderPorgressCard } from '../../components/OrderProgressCard';
 import { ItemSeparator } from '../../components/ItemSeparator';
+
+import queijo from '../../assets/images/queijo.png'
+import margherita from '../../assets/images/margherita.png'
+import portuguesa from '../../assets/images/portuguesa.png'
 
 import { 
   Container,
@@ -20,26 +23,26 @@ export function OrderProgress(){
           <Flex>
           <OrderPorgressCard 
           status='Pronto' 
-          id='1' 
-          table_number='1'
+          image={queijo}
+          table_number='01'
           quantity='1'
           pizza='4 Queijo'/>
           
           <OrderPorgressCard 
-          status='Preparando' 
-          id='1' 
-          table_number='1'
+          status='Preparando'
+          image={portuguesa}
+          table_number='01'
           quantity='1'
-          pizza='4 Queijo'/>
+          pizza='Gauchesca'/>
 
           <ItemSeparator/>
           
           <OrderPorgressCard 
-          status='Entregue' 
-          id='1' 
-          table_number='1'
+          status='Entregue'  
+          image={margherita}
+          table_number='01'
           quantity='1'
-          pizza='4 Queijo'/>
+          pizza='Margherita'/>
           
           </Flex>
             

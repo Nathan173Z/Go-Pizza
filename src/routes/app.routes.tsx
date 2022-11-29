@@ -5,7 +5,7 @@ import { Platform } from 'react-native';
 import { BottomMenu } from '../components/BottomMenu';
 
 import { OrderProgress } from '../screens/OrderProgress'
-import { Login } from '../screens/Login'
+import { Menu } from '../screens/Menu'
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -20,15 +20,12 @@ export function AppRoutes(){
         tabBarInactiveTintColor: COLORS.SECONDARY_400,
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {
-          height: 80,
-          paddingVertical: Platform.OS === 'ios' ? 20 : 0
-        }
+      
       }}
     >
        <Screen
         name="Cardápio"
-        component={OrderProgress}
+        component={Menu}
         options={{
           tabBarIcon: ({ color }) => (
             <BottomMenu title="Cardápio" color={color} />
