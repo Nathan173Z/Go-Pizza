@@ -1,48 +1,17 @@
-import React, { useState } from 'react';
-import { useTheme } from 'styled-components';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Platform } from 'react-native';
-import { BottomMenu } from '../components/BottomMenu';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
+import { Login } from '../screens/Login'
 import { OrderProgress } from '../screens/OrderProgress'
-import { Menu } from '../screens/Menu'
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const { Navigator, Screen, Group} = createNativeStackNavigator()
 
-export function AppRoutes(){
-  const [number, setNumer ] = useState('0');
-
-  const { COLORS } = useTheme();
-    return(
-      <Navigator
-      screenOptions={{
-        tabBarActiveTintColor: COLORS.SECONDARY_900,
-        tabBarInactiveTintColor: COLORS.SECONDARY_400,
-        headerShown: false,
-        tabBarShowLabel: false,
-      
-      }}
-    >
-       <Screen
-        name="Cardápio"
-        component={Menu}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <BottomMenu title="Cardápio" color={color} />
-          )
-        }}
-      />
-
-      <Screen
-        name="OrderProgress"
-        component={OrderProgress}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <BottomMenu title="Pedidos" color={color} notifications={number} />
-          )
-        }}
-      />
-
-        </Navigator>
-    )
+export function AppRoutes() {
+  return (
+    <Navigator screenOptions={{ headerShown: false }}>
+      <Group>
+      <Screen name='Login' component={Login} />
+      <Screen name='orderPress' component={OrderProgress} />
+      </Group>
+    </Navigator>
+  )
 }

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "goFinances",
-    "slug": "goFinances",
+    "name": "Go-Pizza",
+    "slug": "Go-Pizza",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

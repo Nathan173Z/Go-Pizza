@@ -6,9 +6,10 @@ import { useFonts, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { AppRoutes } from './src/routes/app.routes';
+import { Routes  } from './src/routes/index';
 import { Login } from './src/screens/Login';
 import { OrderProgress } from './src/screens/OrderProgress';
+import { Loading } from './src/components/loading';
 
 
 SplashScreen.preventAutoHideAsync();
@@ -24,9 +25,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-        <NavigationContainer>
-        <AppRoutes/>
-      </NavigationContainer>
-    </ThemeProvider>    
+
+    {fontsLoaded ? <Routes /> : <Loading />}
+  </ThemeProvider>   
   );
 }

@@ -12,9 +12,26 @@ import {
   ForgotPasswordButton,
   ForgotPasswordLabel
 } from './styles';
+import { useNavigation } from "@react-navigation/native";
 
 
-export function Login({navigation}){
+
+
+export function Login(){
+  
+  const navigation = useNavigation()
+
+
+  function handleSignIn() {
+    navigation.navigate('orderPress')
+    console.log(handleSignIn)
+  }
+
+  
+
+  
+
+
 
 
   return( 
@@ -43,7 +60,7 @@ export function Login({navigation}){
 
         <Button
             title="Entrar"
-            onPress={() => navigation.navigate('OrderProgress')}
+            onPress={handleSignIn}
           />
 
         </Nav>
