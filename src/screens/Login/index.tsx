@@ -24,7 +24,6 @@ export function Login(){
 
   function handleSignIn() {
     navigation.navigate('orderPress')
-    console.log(handleSignIn)
   }
 
   

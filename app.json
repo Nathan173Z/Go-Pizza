@@ -3,8 +3,25 @@
     "name": "Go-Pizza",
     "slug": "Go-Pizza",
     "version": "1.0.0",
+    "icon": "./assets/GoPizza.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#d23b4a"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/GoPizza.png",
+        "backgroundColor": "#d23b4a"
+      }
+    },
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "31638850-c76f-4c37-b49d-b10989994e62"
+      }
+    }
   }
 }
